@@ -51,6 +51,26 @@ extension UIFont {
                 return UIFont(name: Constants.Roboto.medium, size: size)!
             }
         }
+        enum mediumItalic {
+            static func size(of size: CGFloat) -> UIFont {
+                return UIFont(name: Constants.Roboto.mediumItalic, size: size)!
+            }
+        }
+        enum regular {
+            static func size(of size: CGFloat) -> UIFont {
+                return UIFont(name: Constants.Roboto.regular, size: size)!
+            }
+        }
+        enum thin {
+            static func size(of size: CGFloat) -> UIFont {
+                return UIFont(name: Constants.Roboto.thin, size: size)!
+            }
+        }
+        enum thinItalic {
+            static func size(of size: CGFloat) -> UIFont {
+                return UIFont(name: Constants.Roboto.thinItalic, size: size)!
+            }
+        }
     }
 }
 
