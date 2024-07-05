@@ -27,9 +27,9 @@ class ViewController: UIViewController {
         ])
         
         label.font = UIFont.Roboto.bold.size(of: 40.0)
-        label.textColor = .white
+        label.textColor = AppColors.accentOrange
         
-        view.backgroundColor = .red
+        view.backgroundColor = AppColors.background
         
     }
 
