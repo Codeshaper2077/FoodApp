@@ -1,19 +1,20 @@
 //
-//  OnboardingCoordinator.swift
+//  HomeCoordinator.swift
 //  FoodApp
 //
-//  Created by user on 06.07.2024.
+//  Created by user on 07.07.2024.
 //
 
 import UIKit
 
-class OnboardingCoordinator: Coordinator {
+class HomeCoordinator: Coordinator {
     override func start() {
         let vc = ViewController()
+        vc.view.backgroundColor = .magenta
         navigationController?.pushViewController(vc, animated: true)
     }
     override func finish() {
-        print("OnboardingCoordinator finish")
+        print("HomeCoordinator finish")
     }
+    
 }
-

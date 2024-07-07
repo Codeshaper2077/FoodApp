@@ -28,7 +28,39 @@ private extension AppCoordinator {
         onboardingCoordinator.start()
     }
     func showMainFlow() {
+        guard let navigationController = navigationController else { return }
         
+        // MARK: - Home
+        let homeNavigationController = UINavigationController()
+        let homeCoordinator = HomeCoordinator(type: .home, navigationController: homeNavigationController)
+        homeCoordinator.finishDelegate = self
+        homeCoordinator.start()
+        // MARK: - Order
+        let orderNavigationController = UINavigationController()
+        let orderCoordinator = OrderCoordinator(type: .order, navigationController: orderNavigationController)
+        orderCoordinator.finishDelegate = self
+        orderCoordinator.start()
+        // MARK: - List
+        let listNavigationController = UINavigationController()
+        let listCoordinator = ListCoordinator(type: .list, navigationController: listNavigationController)
+        listCoordinator.finishDelegate = self
+        listCoordinator.start()
+        // MARK: - Profile
+        let profileNavigationController = UINavigationController()
+        let profileCoordinator = ProfileCoordinator(type: .profile, navigationController: profileNavigationController)
+        profileCoordinator.finishDelegate = self
+        profileCoordinator.start()
+        
+        // MARK: - adding Coordinators
+        addChildCoordinator(homeCoordinator)
+        addChildCoordinator(orderCoordinator)
+        addChildCoordinator(listCoordinator)
+        addChildCoordinator(profileCoordinator)
+        
+        // MARK: - init TabBarController
+        let tabBarControllers = [homeNavigationController, orderNavigationController, listNavigationController, profileNavigationController]
+        let tabBarController = TabBarController(tabBarControllers: tabBarControllers)
+        navigationController.pushViewController(tabBarController, animated: true)
     }
 }
 extension AppCoordinator: CoordinatorFinishDelegate {
