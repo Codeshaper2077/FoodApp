@@ -13,7 +13,8 @@ class AppCoordinator: Coordinator {
     override func start() {
 //        let vc = ViewController()
 //        navigationController?.pushViewController(vc, animated: true)
-        showOnboardingFlow()
+//        showOnboardingFlow()
+        showMainFlow()
     }
     override func finish() {
         print("AppCoordinator finish")
@@ -33,21 +34,25 @@ private extension AppCoordinator {
         // MARK: - Home
         let homeNavigationController = UINavigationController()
         let homeCoordinator = HomeCoordinator(type: .home, navigationController: homeNavigationController)
+        homeNavigationController.tabBarItem = UITabBarItem(title: "Home", image: UIImage.init(named: "house"), tag: 0)
         homeCoordinator.finishDelegate = self
         homeCoordinator.start()
         // MARK: - Order
         let orderNavigationController = UINavigationController()
         let orderCoordinator = OrderCoordinator(type: .order, navigationController: orderNavigationController)
+        orderNavigationController.tabBarItem = UITabBarItem(title: "Order", image: UIImage.init(named: "shippingbox"), tag: 1)
         orderCoordinator.finishDelegate = self
         orderCoordinator.start()
         // MARK: - List
         let listNavigationController = UINavigationController()
         let listCoordinator = ListCoordinator(type: .list, navigationController: listNavigationController)
+        listNavigationController.tabBarItem = UITabBarItem(title: "List", image: UIImage.init(named: "list.clipboard"), tag: 2)
         listCoordinator.finishDelegate = self
         listCoordinator.start()
         // MARK: - Profile
         let profileNavigationController = UINavigationController()
         let profileCoordinator = ProfileCoordinator(type: .profile, navigationController: profileNavigationController)
+        profileNavigationController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage.init(named: "person.crop.circle"), tag: 3)
         profileCoordinator.finishDelegate = self
         profileCoordinator.start()
         
