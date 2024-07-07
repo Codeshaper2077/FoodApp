@@ -34,25 +34,26 @@ private extension AppCoordinator {
         // MARK: - Home
         let homeNavigationController = UINavigationController()
         let homeCoordinator = HomeCoordinator(type: .home, navigationController: homeNavigationController)
-        homeNavigationController.tabBarItem = UITabBarItem(title: "Home", image: UIImage.init(named: "house"), tag: 0)
+        homeNavigationController.tabBarItem = UITabBarItem(title: "Home", image: UIImage.init(systemName: "house"), tag: 0)
         homeCoordinator.finishDelegate = self
         homeCoordinator.start()
         // MARK: - Order
         let orderNavigationController = UINavigationController()
         let orderCoordinator = OrderCoordinator(type: .order, navigationController: orderNavigationController)
-        orderNavigationController.tabBarItem = UITabBarItem(title: "Order", image: UIImage.init(named: "shippingbox"), tag: 1)
+        orderNavigationController.tabBarItem = UITabBarItem(title: "Order", image: UIImage.init(systemName: "shippingbox"), tag: 1)
         orderCoordinator.finishDelegate = self
         orderCoordinator.start()
         // MARK: - List
         let listNavigationController = UINavigationController()
         let listCoordinator = ListCoordinator(type: .list, navigationController: listNavigationController)
-        listNavigationController.tabBarItem = UITabBarItem(title: "List", image: UIImage.init(named: "list.clipboard"), tag: 2)
+        listNavigationController.tabBarItem = UITabBarItem(title: "List", image: UIImage.init(systemName: "list.clipboard"), tag: 2)
         listCoordinator.finishDelegate = self
         listCoordinator.start()
         // MARK: - Profile
+       
         let profileNavigationController = UINavigationController()
         let profileCoordinator = ProfileCoordinator(type: .profile, navigationController: profileNavigationController)
-        profileNavigationController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage.init(named: "person.crop.circle"), tag: 3)
+        profileNavigationController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage.init(systemName: "person.crop.circle"), tag: 3)
         profileCoordinator.finishDelegate = self
         profileCoordinator.start()
         
