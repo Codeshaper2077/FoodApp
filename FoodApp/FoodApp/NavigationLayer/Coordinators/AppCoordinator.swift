@@ -13,8 +13,8 @@ class AppCoordinator: Coordinator {
     override func start() {
 //        let vc = ViewController()
 //        navigationController?.pushViewController(vc, animated: true)
-//        showOnboardingFlow()
-        showMainFlow()
+        showOnboardingFlow()
+        //showMainFlow()
     }
     override func finish() {
         print("AppCoordinator finish")
